@@ -454,8 +454,8 @@ module.exports = class ColorPicker extends Component {
 		stt.currentColor = hsv2Hex(hsv)
 		this.setState(stt, x=>{ this.tryForceUpdate(); this.renderDiscs(); })
 		// this.setState({currentColor:hsv2Hex(hsv)}, x=>this.tryForceUpdate())
-		this.props.onColorChange(hsv2Hex(hsv))
-		if (this.props.onColorChangeComplete) this.props.onColorChangeComplete(hsv2Hex(hsv))
+		this.props.onColorChange(hsv2Hex(hsv))		
+		// if (this.props.onColorChangeComplete) this.props.onColorChangeComplete(hsv2Hex(hsv))
 		if(who_hs||!specific) {
 			this.panY.setValue(top)// - this.props.thumbSize / 2)
 			this.panX.setValue(left)// - this.props.thumbSize / 2)
@@ -485,7 +485,7 @@ module.exports = class ColorPicker extends Component {
 		this.setState(stt, x=>{ this.tryForceUpdate(); this.renderDiscs(); })
 		// this.setState({currentColor:hsv2Hex(hsv)}, x=>this.tryForceUpdate())
 		this.props.onColorChange(hsv2Hex(hsv))
-		if (this.props.onColorChangeComplete) this.props.onColorChangeComplete(hsv2Hex(hsv))
+		// if (this.props.onColorChangeComplete) this.props.onColorChangeComplete(hsv2Hex(hsv))
 		let anims = []
 		if(who_hs||!specific) anims.push(//{//
 			Animated.spring(this.panX, { toValue: left, useNativeDriver: false, friction: 90 }),//.start()//
