@@ -210,7 +210,7 @@ module.exports = class ColorPicker extends Component {
 			this.wheelMovement(event, gestureState)
 		},
 		onMoveShouldSetPanResponder: () => true,
-		onPanResponderRelease: (event, gestureState) => {
+		onPanResponderEnd: (event, gestureState) => {
 			const {nativeEvent} = event
 			const {radius} = this.polar(nativeEvent)
 			const {hsv} = this.state
@@ -247,7 +247,7 @@ module.exports = class ColorPicker extends Component {
 			this.sliderMovement(event, gestureState)
 		},
 		onMoveShouldSetPanResponder: () => true,
-		onPanResponderRelease: (event, gestureState) => {
+		onPanResponderEnd: (event, gestureState) => {
 			const {nativeEvent} = event
 			const {hsv} = this.state
 			const {h,s,v} = hsv
